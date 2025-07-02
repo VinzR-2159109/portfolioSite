@@ -29,11 +29,11 @@ jobs:
         run: npx ng build --base-href "/"
 
       - name: Create CNAME file
-        run: echo "vinzroosen.site" > dist/portfolioSite/CNAME
+        run: echo "vinzroosen.site" > dist/portfolio-site/CNAME
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/portfolioSite
+          folder: dist/portfolio-site
           clean: true
