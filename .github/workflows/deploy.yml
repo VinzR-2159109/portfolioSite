@@ -20,9 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: portfolioSite
 
       - name: Build Angular app
-        run: ng build --base-href "https://vinzroosen.site/"
+        run: ng build --base-href "/"
+        working-directory: portfolioSite
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
