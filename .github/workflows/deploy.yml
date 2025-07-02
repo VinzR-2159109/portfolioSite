@@ -9,6 +9,10 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: portfolioSite
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,11 +24,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: portfolioSite
 
       - name: Build Angular app
-        run: ng build --base-href "/"
-        working-directory: portfolioSite
+        run: npx ng build --base-href "/"
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
